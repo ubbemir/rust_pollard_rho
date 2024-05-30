@@ -18,7 +18,7 @@ fn pollard_rho(n: &Integer, x0: &Integer) -> (Integer, u64) {
         d.assign(n.gcd_ref(&Integer::from(&x - &y)));
         num_tries += 1;
 
-        if (&1 < &d) && (&d < n) {
+        if (1 < d) && (&d < n) {
             break;
         }
     }
@@ -27,7 +27,7 @@ fn pollard_rho(n: &Integer, x0: &Integer) -> (Integer, u64) {
 }
 
 fn main() {
-    let h = vec!["708135681371",
+    let h = ["708135681371",
      "1412536792680015997",
      "95270801418092775165121913281",
      "359211301308594647469531797189639",
@@ -49,7 +49,7 @@ fn main() {
         let q = Integer::from(&elem / &result.0);
 
         println!("n{} = {} * {}, antal iterationer: {}", idx + 1, result.0, q, result.1);
-        debug_assert!(&(q * result.0) == &elem)
+        debug_assert!((q * result.0) == elem)
     }
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);
