@@ -5,4 +5,4 @@ edition = "2021"
 
 [dependencies]
 rug = { version="1.24.1", default-features = false, features = ["integer", "std"] }
-gmp-mpfr-sys = { version="1.6.2", features = ["force-cross"] }
+gmp-mpfr-sys = { version="1.6.3", features = ["force-cross"] }
