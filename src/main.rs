@@ -48,7 +48,7 @@ fn main() {
         let result = pollard_rho(&elem, &x0);
         let q = Integer::from(&elem / &result.0);
 
-        println!("n{} = {} * {}, antal iterationer: {}", idx + 1, result.0, q, result.1);
+        println!("n{} = {} * {}, number of iterations: {}", idx + 1, result.0, q, result.1);
         debug_assert!((q * result.0) == elem)
     }
     let duration = start.elapsed();
